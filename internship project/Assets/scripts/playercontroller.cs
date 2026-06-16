@@ -17,16 +17,16 @@ public class playercontroller : MonoBehaviour
     }
     void Start()
     {
-        
+        playerinput.Player.Move.performed += onmove;
+        playerinput.Player.Move.canceled += onmove;
+        playerinput.Player.Sprint.performed += onrunning;
+        playerinput.Player.Sprint.canceled += onrunning;
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerinput.Player.Move.performed += onmove;
-        playerinput.Player.Move.canceled += onmove;
-        playerinput.Player.Sprint.performed += onrunning;
-        playerinput.Player.Sprint.canceled += onrunning;
+       
 
     }
     void onmove(InputAction.CallbackContext context)

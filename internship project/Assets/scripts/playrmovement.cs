@@ -9,6 +9,10 @@ public class playrmovement : MonoBehaviour
     public float walkspeed = 3f;
     public float movespeed;
     bool running;
+    bool jumping;
+    public Vector3 verticalVelocity;
+    private float gravityValue = -9.81f;
+    private float jumpspeed = 2f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +20,9 @@ public class playrmovement : MonoBehaviour
         inputmanager.instance.playerinput.Player.Move.canceled += Handlemoveinput;
         inputmanager.instance.playerinput.Player.Sprint.performed += Handlerunning;
         inputmanager.instance.playerinput.Player.Move.canceled += Handlerunning;
+        inputmanager.instance.playerinput.Player.Jump.performed += handlejump;
+        inputmanager.instance.playerinput.Player.Jump.canceled+= handlejump;
+
     }
 
     // Update is called once per frame
@@ -31,6 +38,19 @@ public class playrmovement : MonoBehaviour
             movespeed = walkspeed;
         }
         controller.Move(movedir.normalized * movespeed * Time.deltaTime);
+
+        if (controller.isGrounded && verticalVelocity.y < 0)
+        {
+            verticalVelocity.y = -2f;
+        }
+        if(jumping == true && controller.isGrounded)
+        {
+            verticalVelocity.y = Mathf.Sqrt(gravityValue * -2f * jumpspeed);
+        }
+
+        verticalVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(verticalVelocity * Time.deltaTime);
+        
     }
     void Handlemoveinput(InputAction.CallbackContext context)
     {
@@ -40,5 +60,18 @@ public class playrmovement : MonoBehaviour
     {
         running = context.performed;
     }
+    void handlejump(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            jumping = true;
+        }
+        else
+        {
+            jumping = false;
+        }
+
+    }
+    
         
 }
