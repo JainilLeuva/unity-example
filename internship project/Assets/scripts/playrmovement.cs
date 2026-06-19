@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class playrmovement : MonoBehaviour
 {
     public CharacterController controller;
-    Vector2 moveinput;
+    public Vector2 moveinput;
     public float runspeed = 5f;
     public float walkspeed = 3f;
     public float movespeed;
@@ -14,7 +14,7 @@ public class playrmovement : MonoBehaviour
     
     [Header("Physics Settings")]
     public Vector3 verticalVelocity;
-    private float gravityValue = -9.81f;
+    private float gravityValue = -10.81f;
     public float jumpspeed = 2f;
 
    
@@ -44,7 +44,7 @@ public class playrmovement : MonoBehaviour
         //jumping
         if (jumping && controller.isGrounded)
         {
-            verticalVelocity.y = Mathf.Sqrt(gravityValue * -2f * jumpspeed);
+            verticalVelocity.y = Mathf.Sqrt(gravityValue * -2f * jumpspeed * Time.deltaTime);
         }       
         jumping = false;
 

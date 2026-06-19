@@ -816,11 +816,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::playrmovement
   controller: {fileID: 567980691}
+  moveinput: {x: 0, y: 0}
   runspeed: 8
   walkspeed: 4
   movespeed: 2
   verticalVelocity: {x: 0, y: 0, z: 0}
-  jumpspeed: 2
+  jumpspeed: 40
 --- !u!143 &567980691
 CharacterController:
   m_ObjectHideFlags: 0
@@ -958,7 +959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FPScamara
   playerbody: {fileID: 567980692}
   yclamp: 60
-  sensitivity: 20
+  sensitivity: 10
 --- !u!1001 &1145029038
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1094,7 +1095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011716061034, guid: a22c0c7e17126fa4f89534dc98bcac8f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.5
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 4000011716061034, guid: a22c0c7e17126fa4f89534dc98bcac8f, type: 3}
       propertyPath: m_LocalScale.z
