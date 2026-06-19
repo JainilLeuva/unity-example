@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,11 +11,14 @@ public class playrmovement : MonoBehaviour
     public float movespeed;
     bool running;
     bool jumping;
-
+    
     [Header("Physics Settings")]
     public Vector3 verticalVelocity;
     private float gravityValue = -9.81f;
-    public float jumpspeed = 2f; 
+    public float jumpspeed = 2f;
+
+   
+
     void Start()
     {
         inputmanager.instance.playerinput.Player.Move.performed += Handlemoveinput;
@@ -25,27 +29,26 @@ public class playrmovement : MonoBehaviour
         inputmanager.instance.playerinput.Player.Sprint.canceled += Handlerunning;
 
         inputmanager.instance.playerinput.Player.Jump.performed += handlejump;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        //setting velocity
         if (controller.isGrounded && verticalVelocity.y < 0)
         {
             verticalVelocity.y = -2f;
         }
 
-        
+        //jumping
         if (jumping && controller.isGrounded)
         {
             verticalVelocity.y = Mathf.Sqrt(gravityValue * -2f * jumpspeed);
-        }
-
-        
+        }       
         jumping = false;
 
-        
+        //movement
         Vector3 movedir = transform.right * moveinput.x + transform.forward * moveinput.y;
         if (running == true)
         {
@@ -54,17 +57,12 @@ public class playrmovement : MonoBehaviour
         else
         {
             movespeed = walkspeed;
-        }
-
-        
-        verticalVelocity.y += gravityValue * Time.deltaTime;
-
-        
+        }       
+        verticalVelocity.y += gravityValue * Time.deltaTime;     
         Vector3 horizontalMove = movedir.normalized * movespeed;
-
         Vector3 finalMovement = horizontalMove + verticalVelocity;
-
-        controller.Move(finalMovement * Time.deltaTime);
+        controller.Move(finalMovement * Time.deltaTime);    
+      
     }
 
     void Handlemoveinput(InputAction.CallbackContext context)
@@ -84,4 +82,5 @@ public class playrmovement : MonoBehaviour
             jumping = true;
         }
     }
+   
 }

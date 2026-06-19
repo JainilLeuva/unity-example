@@ -20,7 +20,7 @@ public class FPScamara : MonoBehaviour
         float mousex = sensitivity * mouse.x * Time.deltaTime;
         float mouseY = sensitivity * mouse.y * Time.deltaTime;
         xrotation -= mouseY;
-        xrotation = math.clamp(xrotation, -yclamp, yclamp);
+        xrotation = Mathf.Clamp(xrotation, -yclamp, yclamp);
         transform.localRotation = Quaternion.Euler(xrotation, 0, 0);
         playerbody.Rotate(Vector3.up * mousex);
     }
