@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraBobAndShake
   playerMovement: {fileID: 567980690}
-  walkBobSpeed: 14
+  walkBobSpeed: 12
   walkBobAmount: 0.09
   sprintBobSpeed: 18
   sprintBobAmount: 0.12
