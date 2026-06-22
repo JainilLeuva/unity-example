@@ -8,13 +8,20 @@ public class playercontroller : MonoBehaviour
 
     private void Awake()
     {
-        playerinput = new ();
-        playerinput.Enable();
+        playerinput = new playerinputss();     
     }
+    void OnEnable()
+    {
+        playerinput.Enable();    // Enables the entire action map asset
+        playerinput.UI.Enable(); // Explicitly ensures UI action map is active
+    }
+
     private void OnDisable()
     {
         playerinput.Disable();
+        playerinput.UI.Disable();
     }
+
     void Start()
     {
         playerinput.Player.Move.performed += onmove;

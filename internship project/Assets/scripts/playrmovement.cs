@@ -17,8 +17,11 @@ public class playrmovement : MonoBehaviour
     private float gravityValue = -10.81f;
     public float jumpspeed = 2f;
 
-    
 
+    private void Awake()
+    {
+        Time.timeScale = 1f;
+    }
     void Start()
     {
         inputmanager.instance.playerinput.Player.Move.performed += Handlemoveinput;

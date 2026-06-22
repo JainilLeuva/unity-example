@@ -15,7 +15,18 @@ public class inputmanager : MonoBehaviour
             Destroy(this);
         }
         playerinput = new();
-        playerinput.Enable();
+       
+    }
+    void OnEnable()
+    {
+        playerinput.Enable();    // Enables the entire action map asset
+        playerinput.UI.Enable(); // Explicitly ensures UI action map is active
+    }
+
+    private void OnDisable()
+    {
+        playerinput.Disable();
+        playerinput.UI.Disable();
     }
     void Start()
     {
