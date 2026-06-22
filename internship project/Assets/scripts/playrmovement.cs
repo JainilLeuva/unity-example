@@ -17,7 +17,7 @@ public class playrmovement : MonoBehaviour
     private float gravityValue = -10.81f;
     public float jumpspeed = 2f;
 
-   
+    
 
     void Start()
     {
@@ -63,6 +63,7 @@ public class playrmovement : MonoBehaviour
         Vector3 finalMovement = horizontalMove + verticalVelocity;
         controller.Move(finalMovement * Time.deltaTime);    
       
+     
     }
 
     void Handlemoveinput(InputAction.CallbackContext context)
@@ -82,5 +83,6 @@ public class playrmovement : MonoBehaviour
             jumping = true;
         }
     }
+   
    
 }
