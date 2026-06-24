@@ -16,7 +16,7 @@ public class UI_script : MonoBehaviour
     }
     public void play()
     {
-        SceneManager.LoadScene("maingame");
+        SceneManager.LoadScene("stage 1");
     }
     public void quit()
     {
