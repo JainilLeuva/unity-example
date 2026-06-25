@@ -2428,7 +2428,7 @@ MonoBehaviour:
   walkspeed: 4
   movespeed: 2
   verticalVelocity: {x: 0, y: 0, z: 0}
-  jumpspeed: 28
+  jumpspeed: 24
 --- !u!143 &567980691
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2462,14 +2462,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567980689}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.6874659, z: -0, w: 0.7262166}
-  m_LocalPosition: {x: 302.77, y: 102.6, z: 103.94}
+  m_LocalRotation: {x: 0.008563665, y: 0.9823838, z: -0.0015458709, w: 0.18667197}
+  m_LocalPosition: {x: 182.5, y: 44.1, z: 129.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 860319613}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 806.86, z: 0}
+  m_LocalEulerAnglesHint: {x: 0.357, y: 878.485, z: 0.931}
 --- !u!120 &567980693
 LineRenderer:
   serializedVersion: 3
