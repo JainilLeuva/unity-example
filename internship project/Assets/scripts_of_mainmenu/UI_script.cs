@@ -16,7 +16,19 @@ public class UI_script : MonoBehaviour
     }
     public void play()
     {
+        SceneManager.LoadScene("leve_scene");
+    }
+    public void level1()
+    {
         SceneManager.LoadScene("stage 1");
+    }
+    public void level2()
+    {
+        SceneManager.LoadScene("stage 2");
+    }
+    public void backtomenu()
+    {
+        SceneManager.LoadScene("mainmenu");
     }
     public void quit()
     {
