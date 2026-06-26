@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class level_change : MonoBehaviour
 {
+    public string leveltochange;
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -15,6 +16,6 @@ public class level_change : MonoBehaviour
     IEnumerator changescene()
     {
         yield return new WaitForSeconds(1f);
-        SceneManager.LoadScene("stage 2");
+        SceneManager.LoadScene(leveltochange);
     }
 }
