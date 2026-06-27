@@ -8,10 +8,7 @@ public class SwapScene : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
+       
         if (SceneManager.GetActiveScene().name == "stage 1")
             BGmusic.instance.GetComponent<AudioSource>().Play();
         if (SceneManager.GetActiveScene().name == "stage 1")
