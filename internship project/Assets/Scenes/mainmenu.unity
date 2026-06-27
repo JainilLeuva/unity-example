@@ -1220,6 +1220,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1931881960}
   - component: {fileID: 1931881959}
+  - component: {fileID: 1931881961}
+  - component: {fileID: 1931881962}
   m_Layer: 0
   m_Name: background music
   m_TagString: Untagged
@@ -1339,6 +1341,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1931881961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931881958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a68947a64e58a544bb1f537a6dfcdc5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BGmusic
+--- !u!114 &1931881962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931881958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a95bcb0c6a4224d86476ca432a6421, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::swapsecen
 --- !u!1 &1988520101
 GameObject:
   m_ObjectHideFlags: 0
