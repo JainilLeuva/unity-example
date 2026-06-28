@@ -9,6 +9,16 @@ public class gameManager : MonoBehaviour
 
         // 2. Set the target frame rate to 60
         Application.targetFrameRate = 60;
+
     }
+    void Start()
+    {
+        // Move cursor logic here so the game window has time to initialize
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+
+
 }
 

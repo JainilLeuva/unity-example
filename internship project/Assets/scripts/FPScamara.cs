@@ -1,19 +1,23 @@
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FPScamara : MonoBehaviour
 {
     public Transform playerbody;
     public float yclamp;
     public float sensitivity;
-    float xrotation;
+    public float xrotation;
+    public Slider sensi_slider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    private void Start()
+    {
+        if(sensi_slider != null)
+        {
+             sensi_slider.value = sensitivity ;
+        }
+}
     void Update()
     {
         Vector2 mouse = inputmanager.instance.playerinput.Player.Look.ReadValue<Vector2>();
@@ -23,5 +27,9 @@ public class FPScamara : MonoBehaviour
         xrotation = Mathf.Clamp(xrotation, -yclamp, yclamp);
         transform.localRotation = Quaternion.Euler(xrotation, 0, 0);
         playerbody.Rotate(Vector3.up * mousex);
+    }
+    public void updatesensi(float Newvalue)
+    {
+        sensitivity = Newvalue;
     }
 }
