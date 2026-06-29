@@ -6,6 +6,8 @@ public class UIscript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject gamepenal;
+    public AudioSource audiomanager;
+   
     
     
 
@@ -31,7 +33,8 @@ public class UIscript : MonoBehaviour
     }
     public void Mainmenu()
     {
-        SceneManager.LoadScene("mainmenu");
+        SceneManager.LoadScene("leve_scene");
+        BGmusic.instance.GetComponent<AudioSource>().Play();
 
     }
  
