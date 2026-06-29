@@ -6,14 +6,29 @@ using UnityEngine.SceneManagement;
 
 public class SwapScene : MonoBehaviour
 {
+    public bool isplaying = false;
     void Update()
     {
-       
+        if (isplaying)
+        {
+            isplaying = true;
+            if (SceneManager.GetActiveScene().name == "mainmenu")
+                BGmusic.instance.GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            isplaying = false;
+        }
+
+
+
         if (SceneManager.GetActiveScene().name == "stage 1")
-            BGmusic.instance.GetComponent<AudioSource>().Play();
-        if (SceneManager.GetActiveScene().name == "stage 1")
+        {
             BGmusic.instance.GetComponent<AudioSource>().Pause();
-        //BGmusic.instance.GetComponent<AudioSource>().Play();
+            
+        }
+       
+
         if (SceneManager.GetActiveScene().name == "stage 2")
             BGmusic.instance.GetComponent<AudioSource>().Pause();
 
