@@ -11,12 +11,7 @@ public class gameManager : MonoBehaviour
         Application.targetFrameRate = 60;
 
     }
-    void Start()
-    {
-        // Move cursor logic here so the game window has time to initialize
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
+   
 
 
 
