@@ -1,36 +1,59 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-
-public class SwapScene : MonoBehaviour
+public class AudioManager : MonoBehaviour
 {
-    public bool isplaying = false;
-    void Update()
+    public static AudioManager instance;
+
+    private AudioSource audioSource;
+
+    void Awake()
     {
-        if (isplaying)
+        // 1. Singleton pattern: Prevents duplicate AudioManagers from spawning
+        if (instance == null)
         {
-            isplaying = true;
-            if (SceneManager.GetActiveScene().name == "mainmenu")
-                BGmusic.instance.GetComponent<AudioSource>().Play();
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Keeps this object alive across scenes
+            audioSource = GetComponent<AudioSource>();
         }
         else
         {
-            isplaying = false;
+            Destroy(gameObject); // Destroys duplicates
+            return;
         }
+    }
 
+    void OnEnable()
+    {
+        // 2. Listen to Unity's scene loading events
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
-        if (SceneManager.GetActiveScene().name == "stage 1")
+    // 3. This runs automatically every time a new scene loads
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        string currentScene = scene.name;
+
+        // Check if the current scene should have menu music
+        if (currentScene == "mainmenu" || currentScene == "leve_scene")
         {
-            BGmusic.instance.GetComponent<AudioSource>().Pause();
-            
+            if (!audioSource.isPlaying)
+            {
+                audioSource.Play();
+            }
         }
-       
-
-        if (SceneManager.GetActiveScene().name == "stage 2")
-            BGmusic.instance.GetComponent<AudioSource>().Pause();
-
+        // Check if the current scene is a gameplay level
+        else if (currentScene == "stage 1" || currentScene == "stage 2")
+        {
+            if (audioSource.isPlaying)
+            {
+                audioSource.Stop();
+            }
+        }
     }
 }

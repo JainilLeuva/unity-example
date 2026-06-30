@@ -10,10 +10,7 @@ public class gameManager : MonoBehaviour
         // 2. Set the target frame rate to 60
         Application.targetFrameRate = 60;
 
+
     }
-   
-
-
-
 }
 

@@ -34,7 +34,7 @@ public class UIscript : MonoBehaviour
     public void Mainmenu()
     {
         SceneManager.LoadScene("leve_scene");
-        BGmusic.instance.GetComponent<AudioSource>().Play();
+        
 
     }
  
