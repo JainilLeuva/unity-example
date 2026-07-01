@@ -1,4 +1,4 @@
-using Unity.VisualScripting;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -14,7 +14,7 @@ public class playrmovement : MonoBehaviour
     
     [Header("Physics Settings")]
     public Vector3 verticalVelocity;
-    private float gravityValue = -10.81f;
+    private float gravityValue = -12.81f;
     public float jumpspeed = 2f;
 
 
