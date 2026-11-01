@@ -11246,7 +11246,7 @@ MonoBehaviour:
   walkspeed: 4
   movespeed: 2
   verticalVelocity: {x: 0, y: 0, z: 0}
-  jumpspeed: 40
+  jumpspeed: 60
 --- !u!143 &584572712
 CharacterController:
   m_ObjectHideFlags: 0
@@ -11281,7 +11281,7 @@ Transform:
   m_GameObject: {fileID: 584572709}
   serializedVersion: 2
   m_LocalRotation: {x: -0.0015716666, y: -0.20548159, z: 0.00063993735, w: -0.9786595}
-  m_LocalPosition: {x: 2262.3, y: 1.26, z: -2225.6}
+  m_LocalPosition: {x: 2093.26, y: 315.64, z: -2093.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

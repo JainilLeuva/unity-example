@@ -3328,9 +3328,9 @@ MonoBehaviour:
   moveinput: {x: 0, y: 0}
   runspeed: 8
   walkspeed: 4
-  movespeed: 2
+  movespeed: 10
   verticalVelocity: {x: 0, y: 0, z: 0}
-  jumpspeed: 27
+  jumpspeed: 60
 --- !u!143 &567980691
 CharacterController:
   m_ObjectHideFlags: 0
